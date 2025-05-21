@@ -1,7 +1,23 @@
-const postgres = require('postgres');
+const fs = require('fs');
+const { Client } = require('pg');
 require('dotenv').config();
 
-const connectionString = process.env.DATABASE_URL;
-const sql = postgres(connectionString);
+const config = {
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
+  host: process.env.PGHOST,
+  port: process.env.PGPORT,
+  database: process.env.PGDATABASE,
+  ssl: {
+    rejectUnauthorized: true,
+    ca: fs.readFileSync(process.env.PGSSLCA || './ca.pem').toString(),
+  },
+};
 
-module.exports = sql;
+const client = new Client(config);
+
+client.connect()
+  .then(() => console.log('Connected to PostgreSQL with SSL'))
+  .catch(err => console.error('Connection error', err.stack));
+
+module.exports = client;

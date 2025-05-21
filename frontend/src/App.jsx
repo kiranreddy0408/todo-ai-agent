@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <div
-      className="min-h-screen opacity- bg-gray-900 text-gray-100 flex flex-col items-center py-8 px-8"
+      className="min-h-screen w-full opacity- bg-gradient-to-br from-gray-900 via-gray-950 to-slate-800 text-gray-100 flex flex-col items-center py-8 px-10"
       // style={{
       //   backgroundImage: `url(${bg})`,
       //   backgroundSize: 'cover',
@@ -35,7 +35,7 @@ export default function App() {
       <h2 className="text-4xl font-bold mb-6 flex items-center gap-2">
         <span role="img" aria-label="checklist">📝</span> Todo Summary Agent
       </h2>
-      <div className="w-full max-w-8xl grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="w-full max-w-10xl grid grid-cols-2 md:grid-cols-3 gap-10">
         {/* LeftSide */}
         <div className="md:col-span-2 bg-gray-800 rounded-xl shadow-lg p-6">
           <TodoList ref={todoListRef} onEdit={handleEditTodo} />
