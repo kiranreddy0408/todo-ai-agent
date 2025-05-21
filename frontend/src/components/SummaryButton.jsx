@@ -44,12 +44,11 @@ export default function SummaryButton() {
         </div>
       )}
 
-    
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-[80%] max-w-[50%] max-h-[80vh] overflow-y-auto">
+          <div className="bg-gray-800 p-4 sm:p-6 rounded-none sm:rounded-lg shadow-lg w-full h-full sm:w-[80%] sm:max-w-[50%] sm:max-h-[80vh] sm:overflow-y-auto flex flex-col">
             <h4 className="text-xl font-bold text-white mb-4">Summary</h4>
-            <div className="text-gray-300 mb-4 prose prose-invert max-w-none">
+            <div className="text-gray-300 mb-4 prose prose-invert max-w-none flex-1 overflow-y-auto">
               <ReactMarkdown>{summary}</ReactMarkdown>
             </div>
             <div className="flex justify-end">

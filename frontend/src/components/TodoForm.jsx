@@ -75,7 +75,7 @@ export default function TodoForm({ todo, onSave, onClose }) {
           {todo ? <FiEdit3 /> : <FaMagic />} {todo ? 'Edit Task' : 'Add New Task'}
         </h3>
         <div className="mb-3">
-          <label className="block mb-1 text-gray-400">Task Name</label>
+          <label className="block mb-1 text-gray-400">Task Name *</label>
           <div className="flex items-center gap-2">
             <input
               className="w-full p-2 rounded bg-gray-700 text-white"
@@ -96,12 +96,13 @@ export default function TodoForm({ todo, onSave, onClose }) {
           </div>
         </div>
         <div className="mb-3">
-          <label className="block mb-1 text-gray-400">Description (Optional)</label>
+          <label className="block mb-1 text-gray-400">Description *</label>
           <textarea
             className="w-full p-2 rounded bg-gray-700 text-white"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Enter task description"
+            required
           />
         </div>
         <div className="mb-4">
