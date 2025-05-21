@@ -29,7 +29,7 @@ export default function SummaryButton() {
   };
 
   return (
-    <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+    <div className="bg-gray-800 p-4 rounded-lg shadow-md">
       <h3 className="text-lg font-bold mb-4 text-white">✨ AI Insights </h3>
       <button
         onClick={handleGenerateSummary}
